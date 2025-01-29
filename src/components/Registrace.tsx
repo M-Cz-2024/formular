@@ -23,11 +23,11 @@ const Registrace: React.FC= () => {
   }
 
   const validationSchema=Yup.object().shape({
-    name:Yup.string().min(3,'Zadejte alespoň 3 písmena').required("Prosím vyplňte"),
-    email:Yup.string().min(8,'Zadejte alespoň 8 písmen').email("Nesprávný formát emailu").required("Prosím vyplňte"),
-    surName:Yup.string().min(3,'Zadejte alespoň 3 písmena').required("Prosím vyplňte"),
-    userName:Yup.string().min(3,'Zadejte alespoň 3 písmena').required("Prosím vyplňte"),
-    country: Yup.string().required("Výběr je povinný").notOneOf(["Vyberte..."],"Musíte vybrat platnou možnost")
+    name:Yup.string().min(3,'Zadejte alespoň 3 písmena').required("Prosím vyplňte jméno"),
+    email:Yup.string().min(8,'Zadejte alespoň 8 písmen').email("Nesprávný formát emailu").required("Prosím vyplňte email"),
+    surName:Yup.string().min(3,'Zadejte alespoň 3 písmena').required("Prosím vyplňte příjmení"),
+    userName:Yup.string().min(3,'Zadejte alespoň 3 písmena').required("Prosím vyplňte uživatele"),
+    country: Yup.string().required("Výběr je povinný").notOneOf(["Vyberte..."],"Vyberte platnou možnost")
   })
 
     const handlePostForm = (

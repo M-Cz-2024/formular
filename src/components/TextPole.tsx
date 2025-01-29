@@ -11,11 +11,11 @@ type TextPoleProps= {
 }
 
 const TextPole: React.FC<TextPoleProps> = ({ label, name, placeholder }) => {
-  const renderErrorMessage = (msg: string) => (<span style={{color:"red"}}>{msg}</span>);
+  const renderErrorMessage = (msg: string) => (<span style={{color:"red", position:"absolute"}}>{msg}</span>);
   const [field] = useField(name);
     
   return (
-    <FormControl fullWidth>
+    <FormControl fullWidth sx={{display:'relative'}}>
       <Field 
         {...field}
         as={TextField}
@@ -26,8 +26,9 @@ const TextPole: React.FC<TextPoleProps> = ({ label, name, placeholder }) => {
         InputLabelProps={{
           shrink: true,
           }}
-        helperText={<ErrorMessage name={name}>{renderErrorMessage}</ErrorMessage>}
+        helperText={<ErrorMessage name={name}  >{renderErrorMessage}</ErrorMessage>}
         />
+        {/* <ErrorMessage name={name}  >{renderErrorMessage}</ErrorMessage> */}
     </FormControl>
   )
 }

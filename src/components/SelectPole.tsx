@@ -9,7 +9,7 @@ type SelectPoleProps = {
   }
 
     const SelectPole: React.FC<SelectPoleProps> = ({ label, name, id, placeholder }) => {
-    const renderErrorMessage = (msg: string) => (<span style={{color:"red"}}>{msg}</span>);
+    const renderErrorMessage = (msg: string) => (<span style={{color:"red", position:"absolute"}}>{msg}</span>);
     const kraje = [
         "Hlavní město Praha",
         "Středočeský kraj",
@@ -29,7 +29,7 @@ type SelectPoleProps = {
     const [field] = useField(name);
 
   return (
-     <FormControl variant="standard" fullWidth margin="normal">
+     <FormControl variant="standard" fullWidth margin="normal" sx={{display:'relative'}}>
     <InputLabel shrink htmlFor={id}>{label}</InputLabel>
     <Field
         {...field}
