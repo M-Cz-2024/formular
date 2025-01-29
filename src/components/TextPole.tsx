@@ -28,7 +28,6 @@ const TextPole: React.FC<TextPoleProps> = ({ label, name, placeholder }) => {
           }}
         helperText={<ErrorMessage name={name}  >{renderErrorMessage}</ErrorMessage>}
         />
-        {/* <ErrorMessage name={name}  >{renderErrorMessage}</ErrorMessage> */}
     </FormControl>
   )
 }
